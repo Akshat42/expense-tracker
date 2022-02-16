@@ -1,4 +1,3 @@
-import ExpensesFilter from "../expenseFilter/expenseFilter";
 import ExpenseForm from "../ExpenseForm/expenseForm";
 import "./newExpense.css";
 
@@ -13,7 +12,6 @@ const newExpense = ({ newExpenseData }) => {
 
     return (
         <div className="new-expense">
-            <ExpensesFilter></ExpensesFilter>
             <ExpenseForm
                 onSubmitExpenseForm={newExpenseDataHandler}
             ></ExpenseForm>

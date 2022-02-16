@@ -1,10 +1,15 @@
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
 import "./Expenses.css";
 import Card from "../Wrappers/Card/Card";
+import ExpensesFilter from "../expenseFilter/expenseFilter";
 
 const Expenses = ({ expenses }) => {
+    const handleSelectedYear = (selectedYear) => {
+        console.log(selectedYear);
+    };
     return (
         <Card className="expenses">
+            <ExpensesFilter onSelectYear={handleSelectedYear}></ExpensesFilter>
             <ExpenseItem
                 date={expenses[0].date}
                 amount={expenses[0].amount}
