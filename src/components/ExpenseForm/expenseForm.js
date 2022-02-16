@@ -36,7 +36,7 @@ const ExpenseForm = ({ onSubmitExpenseForm }) => {
         <form onSubmit={expenseFormHandler}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
-                    <label for="title">Title</label>
+                    <label htmlFor="title">Title</label>
                     <input
                         required
                         id="title"
@@ -47,7 +47,7 @@ const ExpenseForm = ({ onSubmitExpenseForm }) => {
                 </div>
 
                 <div className="new-expense__control">
-                    <label for="amount">Amount</label>
+                    <label htmlFor="amount">Amount</label>
                     <input
                         required
                         id="amount"
@@ -58,7 +58,7 @@ const ExpenseForm = ({ onSubmitExpenseForm }) => {
                 </div>
 
                 <div className="new-expense__control">
-                    <label for="date">Date</label>
+                    <label htmlFor="date">Date</label>
                     <input
                         required
                         id="date"
