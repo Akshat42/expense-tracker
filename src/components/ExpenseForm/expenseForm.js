@@ -5,6 +5,7 @@ const ExpenseForm = ({ onSubmitExpenseForm }) => {
     const [title, setTitle] = useState("");
     const [amount, setAmount] = useState("");
     const [date, setDate] = useState("");
+    const [hideForm, setHideForm] = useState(true);
 
     const dateHandler = (event) => {
         setDate(event.target.value);
@@ -29,10 +30,23 @@ const ExpenseForm = ({ onSubmitExpenseForm }) => {
         setTitle("");
         setDate("");
         setAmount("");
+        setHideForm(true);
         onSubmitExpenseForm(userInput);
     };
 
-    return (
+    const newExpenseButtonHandler = () => {
+        setHideForm(false);
+    };
+
+    const cancelButtonHandler = () => {
+        setHideForm(true);
+    };
+
+    const addNewExpenseButton = (
+        <button onClick={newExpenseButtonHandler}>Add New Expense</button>
+    );
+
+    const addExpenseInputForm = (
         <form onSubmit={expenseFormHandler}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
@@ -69,10 +83,15 @@ const ExpenseForm = ({ onSubmitExpenseForm }) => {
                 </div>
             </div>
             <div className="new-expense__actions">
+                <button type="button" onClick={cancelButtonHandler}>
+                    Cancel
+                </button>
                 <button type="submit">Add Expense</button>
             </div>
         </form>
     );
+
+    return hideForm ? addNewExpenseButton : addExpenseInputForm;
 };
 
 export default ExpenseForm;
