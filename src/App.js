@@ -24,7 +24,6 @@ const DUMMY_DATA = [
 ];
 
 function App() {
-    console.log("App re-render");
     const [expenses, setExpenses] = useState(DUMMY_DATA);
 
     const newExpenseDataHandler = (newExpenseData) => {
